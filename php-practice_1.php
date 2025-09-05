@@ -6,6 +6,7 @@ echo "私の名前は「" . $name . "」です。";
 
 
 
+
 // Q2 四則演算
 
 $num = 5 * 4;
@@ -14,9 +15,11 @@ echo $num / 2;
 
 
 
+
 // Q3 日付操作
 
 echo "現在時刻は、" . date("Y年m月d日 H時i分s秒") . "です。";
+
 
 
 
@@ -43,12 +46,14 @@ else
 
 
 
+
 // Q5 条件分岐-2 三項演算子
 
 $age = 25;
 $message = ($age < 18) ? "未成年です。" : "成人です。";
 
 echo $message;
+
 
 
 
@@ -61,6 +66,7 @@ $prefecture =
 ];
 
 echo $prefecture[3] . "と" . $prefecture[4] . "は関東地方の都道府県です。";
+
 
 
 
@@ -82,6 +88,7 @@ echo $prefecture["茨城県"] . "\n";
 
 
 
+
 // Q8 連想配列-2
 
 $prefecture = 
@@ -97,6 +104,7 @@ foreach ($prefecture as $ken => $shi)
       echo $ken . "の県庁所在地は、" . $shi . "です。";
     }
 }
+
 
 
 
@@ -127,6 +135,7 @@ foreach ($prefecture as $ken => $shi)
 
 
 
+
 // Q10 関数-1
 
 function hello($name)
@@ -136,6 +145,7 @@ function hello($name)
 
 hello("金谷");
 hello("安藤");
+
 
 
 
@@ -150,6 +160,7 @@ $price = 1000;
 $TaxInPrice = calcTaxInPrice($price);
 
 echo $price . "円の商品の税込価格は" . $TaxInPrice . "円です。";
+
 
 
 
@@ -169,6 +180,7 @@ function distinguishNum($number)
 
 echo distinguishNum(11);
 echo distinguishNum(24);
+
 
 
 
