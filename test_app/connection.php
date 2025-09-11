@@ -41,7 +41,7 @@ function updateTodoData($post)
 function getTodoTextById($id)
 {
     $dbh = connectPdo();
-    $sql = "SELECT * FROM todos WHERE deleted_at IS NULL AND id = $id";
+    $sql = 'SELECT * FROM todos WHERE deleted_at IS NULL AND id =' . $id;
     $data = $dbh->query($sql)->fetch();
     return $data['content'];
 }
@@ -52,12 +52,8 @@ function deleteTodoData($id)
 {
     $dbh = connectPdo();
     $now = date('Y-m-d H:i:s');
-
-    $sql = 'UPDATE todos SET deleted_at = :deleted_at WHERE id = :id';
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindValue(':deleted_at', $now, PDO::PARAM_STR);
-    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->execute();
+    $sql = 'UPDATE todos SET deleted_at = "' . $now . '" WHERE id = ' . $id;
+    $dbh->query($sql);
 }
 
 
